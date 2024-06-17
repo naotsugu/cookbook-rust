@@ -3,9 +3,10 @@
 
 ## Basic
 
-| name                               | description                       |
-|------------------------------------|-----------------------------------|
-| [helloworld](helloworld/) | The simplest hello world program. |
+| name                      | description                                   |
+|---------------------------|-----------------------------------------------|
+| [helloworld](helloworld/) | The simplest hello world program.             |
+| [grep](grep/)             | File reader. |
 
 
 ## winit

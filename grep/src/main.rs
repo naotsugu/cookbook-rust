@@ -21,7 +21,7 @@ fn grep_main() -> Result<(), Box<dyn Error>> {
 
     let target = match args.next() {
         Some(s) => s,
-        None => Err("usage: grep PATTERN FILE...")?
+        None => Err("usage: grep <pattern <file-path>...")?
     };
     let files: Vec<PathBuf> = args.map(PathBuf::from).collect();
 
