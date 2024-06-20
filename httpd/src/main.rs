@@ -2,14 +2,18 @@ use std::fs;
 use std::io::{BufRead, BufReader, Write};
 use std::net::{TcpListener, TcpStream};
 use std::error::Error;
+use std::thread;
 
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:8080").unwrap();
     for stream in listener.incoming() {
         let stream = stream.unwrap();
-        if let Err(e) = handle_connection(stream) {
-            eprintln!("error: {e}");
-        }
+
+        thread::spawn(|| {
+            if let Err(e) = handle_connection(stream) {
+                eprintln!("error: {e}");
+            }
+        });
     }
 }
 
